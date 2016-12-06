@@ -146,7 +146,7 @@ export class Docker {
 
   public command(command: string, callback?: (err, data) => void) {
     let docker = this;
-    let execCommand = 'docker ';
+    let execCommand = process.env.DOCKER_TYPE || 'docker ';
     let machineconfig = '';
 
     const promise = Promise.resolve().then(function () {
